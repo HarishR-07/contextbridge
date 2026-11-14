@@ -1,9 +1,12 @@
 {
   "name": "contextbridge",
   "version": "0.1.0",
-  "description": "Open-source AI conversation manager for context management and project memory. Turn ChatGPT, Claude, and Gemini chats into editable snapshots and portable AI handoffs with your own API key.",
+  "description": "Stop losing context in long AI chats. Create editable, evidence-linked project snapshots and portable handoffs for Claude Code, Cursor, and more. Self-hosted with your own API key.",
   "keywords": [
     "ai-context-management",
+    "context-loss",
+    "long-context",
+    "conversation-handoff",
     "ai-handoff",
     "project-memory",
     "chatgpt",

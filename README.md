@@ -1,16 +1,26 @@
 # ContextBridge
 
-**Open-source AI conversation manager for context management and project memory. Turn ChatGPT, Claude, and Gemini chats into editable snapshots and portable AI handoffs with your own API key.**
-
-> **Suggested GitHub About description:** Open-source AI conversation manager for context management and project memory. Turn ChatGPT, Claude, and Gemini chats into editable snapshots and portable handoffs for Claude Code, Cursor, and other AI coding assistants. Self-hosted with your own API key (BYOK).
-
-> **Suggested GitHub topics:** `ai-context-management` `ai-handoff` `project-memory` `context-engineering` `chatgpt` `claude` `gemini` `cursor` `ai-coding-assistant` `conversation-export` `self-hosted` `bring-your-own-key`
+**AI chats forget project context. ContextBridge turns long ChatGPT, Claude, and Gemini conversations into editable, evidence-linked project snapshots and portable handoffs for Claude Code, Cursor, and other AI assistants. Self-host it and use your own provider API key (BYOK).**
 
 ContextBridge helps with lost context in long AI chats, switching between AI assistants, and keeping project decisions and next steps available to coding agents. It converts conversations into editable project state, checks evidence quotes, and exports files that tools can read, including `CLAUDE.md`, `AGENTS.md`, and `.cursorrules`. It is a self-hostable Next.js app: AI features use **your own API key**; this project does not provide or fall back to an owner-funded model key.
 
-## What problem does ContextBridge solve?
+## From lost context to a usable handoff
 
 AI conversations often lose useful project context when a chat grows too long, a user starts a new conversation, or a project moves between ChatGPT, Claude, Gemini, Cursor, or another coding assistant. ContextBridge creates a user-editable project memory and portable context handoff from chat exports or pasted conversation text. It is designed for AI context management, long-chat summarization, project handoff between AI tools, and reusable coding-agent instructions.
+
+### The generation workflow
+
+```mermaid
+flowchart LR
+  A[Paste a conversation or import a chat export] --> B[Choose a provider and enter your API key]
+  B --> C[Generate a project snapshot]
+  C --> D[Review fields, source quotes, and chunk changes]
+  D --> E[Edit or correct the snapshot]
+  E --> F[Export CLAUDE.md, AGENTS.md, .cursorrules, or JSON]
+  F --> G[Continue in a new chat or coding agent]
+```
+
+Generation uses the API key you provide for the selected OpenAI, Anthropic, or Gemini provider. You can import, edit, compare, and export snapshots without a key, but AI generation and optimization require provider API access.
 
 ## Common use cases
 
@@ -26,7 +36,7 @@ AI conversations often lose useful project context when a chat grows too long, a
 Requirements: Git, Node.js 20 or later, and npm.
 
 ```bash
-git clone https://github.com/OWNER/contextbridge.git
+git clone https://github.com/HarishR-07/contextbridge.git
 cd contextbridge
 npm ci
 npm run dev
@@ -108,6 +118,10 @@ GitHub Actions runs typecheck, tests, and a production build on pushes and pull 
 - Production security headers, request size caps, same-origin checks, and a best-effort in-memory rate limit are configured. A public production deployment needs shared rate limiting and operational monitoring.
 - Prompt injection in imported chats or code cannot be fully prevented. Review generated state and evidence.
 - Report vulnerabilities privately using the process in [SECURITY.md](SECURITY.md); do not post credentials or exploit details in public issues.
+
+## Collaborate
+
+Contributions are welcome. Help improve chat import compatibility, evidence and provenance, accessibility, provider support, documentation, or the evaluation set. Start with [CONTRIBUTING.md](CONTRIBUTING.md), open an issue to discuss larger changes, and send focused pull requests. Never include real chat exports, API keys, access codes, or private project data in an issue, test fixture, or commit.
 
 ## Honest limits
 
