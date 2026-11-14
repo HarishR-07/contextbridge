@@ -1,0 +1,10 @@
+[
+  {
+    "conversation": "We are building a small task tracker called Pine. The goal is to help a team share work. It uses Next.js and SQLite. We decided to keep SQLite because the app is single-user for now. The current task is fixing the task export button. Next, add an export test.",
+    "expected": { "project": ["Pine"], "architecture": ["Next.js", "SQLite"], "current_task": ["export button"] }
+  },
+  {
+    "conversation": "Project Atlas is a Python data importer for CSV files. It must run offline. We tried a cloud API but rejected it because customer data cannot leave the laptop. The active issue is that quoted commas break parsing. Next step: add tests for escaped quotes.",
+    "expected": { "project": ["Atlas"], "constraints": ["offline"], "known_issues": ["quoted commas"], "failed_approaches": ["cloud API"] }
+  }
+]

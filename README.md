@@ -117,4 +117,3 @@ GitHub Actions runs typecheck, tests, and a production build on pushes and pull 
 - Import parsing, source import links, token estimates for non-OpenAI models, and code shrinking are best effort. The extension sees rendered content only.
 - Billing, subscriptions, team workspaces, and per-user hosted quotas are not implemented. Browser-local state is not backed up. MCP state is local and does not sync with the web app.
 - No security review can prove software vulnerability-free. Re-run dependency audits and review deployment controls before launch.
-

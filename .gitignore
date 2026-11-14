@@ -1,0 +1,14 @@
+node_modules
+.next
+.next-*
+.vercel
+out
+coverage
+dist
+*.log
+.DS_Store
+.idea
+.env.local
+.env.*
+!.env.example
+.contextbridge/
